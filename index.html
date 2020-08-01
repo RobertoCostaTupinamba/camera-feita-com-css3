@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera com CSS3</title>
+    <style>
+        #app{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .camera {
+            width: 75px;
+            height: 50px;
+            background-color: black;
+            position: relative;
+            border-radius: 10px;
+        }
+        .camera::before {
+            content: '';
+            top: 11px;
+            left: 26px;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 20px;
+            background-color:gray;
+        }
+        .camera::after{
+            content: '';
+            top: -15px;
+            left: 19px;
+            position: absolute;
+            width: 35px;
+            height: 15px;
+            background-color:gray;
+            border-top-right-radius: 8px ;
+            border-top-left-radius:  8px;
+            cursor: pointer;
+        }
+        .camera:hover::after {
+            animation: clickCamera 1s linear;
+        }
+
+        @keyframes clickCamera {
+            0% {
+                height: 15px;
+                top: -15px;
+            }
+
+            100% {
+                height: 10px;
+                top: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="camera">
+
+        </div>
+    </div>
+</body>
+</html>
